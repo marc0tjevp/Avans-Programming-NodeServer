@@ -1,0 +1,23 @@
+{
+  "name": "avans-programming-nodeserver",
+  "version": "1.0.0",
+  "description": "Simple node server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marc0tjevp/Avans-Programming-NodeServer.git"
+  },
+  "author": "Marco van Poortvliet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marc0tjevp/Avans-Programming-NodeServer/issues"
+  },
+  "homepage": "https://github.com/marc0tjevp/Avans-Programming-NodeServer#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
