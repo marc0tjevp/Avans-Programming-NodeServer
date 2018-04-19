@@ -1,14 +1,17 @@
-let http = require('http');
+var server = require('http').createServer();
+var port = process.env.PORT || 80;
 
 let json = JSON.stringify({
     'firstname': 'Marco',
     'lastname': 'van Poortvliet'
 });
 
-http.createServer(function (request, response) {
+server.listen(port, function () {
     console.log('=^.^= A kawaii neko appeared on your server =^.^=');
-    response.writeHead(200, {'Content-Type': 'application/json'});
+    response.writeHead(200, {
+        'Content-Type': 'application/json'
+    });
     response.end(json);
-}).listen(3000);
+});
 
-console.log('Server started listening on port 3000');
+console.log('Listening on ' + port);
