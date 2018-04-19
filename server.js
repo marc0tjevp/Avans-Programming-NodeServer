@@ -9,6 +9,4 @@ http.createServer(function (request, response) {
     console.log('=^.^= A kawaii neko appeared on your server =^.^=');
     response.writeHead(200, {'Content-Type': 'application/json'});
     response.end(json);
-}).listen(3000);
-
-console.log('Server started listening on port 3000');
+}).listen(80);
