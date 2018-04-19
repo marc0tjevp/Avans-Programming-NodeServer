@@ -18,6 +18,5 @@
   },
   "homepage": "https://github.com/marc0tjevp/Avans-Programming-NodeServer#readme",
   "dependencies": {
-    "express": "^4.16.3"
   }
 }
