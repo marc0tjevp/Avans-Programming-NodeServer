@@ -55,32 +55,26 @@ http.createServer(function (request, response) {
         'Maastricht'
     ];
 
-    var randomFirstName = Math.floor(Math.random() * firstNameArray.length);
-    var randomLastName = Math.floor(Math.random() * lastNameArray.length);
-    var randomAge = Math.floor(Math.random() * 80 + 1);
-    var randomCity = Math.floor(Math.random() * cityArray.length);
-
-
+    var parameterPersonsToGet = 6;
     var o = {};
     var key = 'persons';
     o[key] = [];
 
-    var data = {
-        'firstname': firstNameArray[randomFirstName],
-        'lastname': lastNameArray[randomLastName],
-        'age': randomAge,
-        'city': cityArray[randomCity]
-    }
+    for (i = 0; i < parameterPersonsToGet; i++) {
+        var randomFirstName = Math.floor(Math.random() * firstNameArray.length);
+        var randomLastName = Math.floor(Math.random() * lastNameArray.length);
+        var randomAge = Math.floor(Math.random() * 80 + 1);
+        var randomCity = Math.floor(Math.random() * cityArray.length);
 
-    var data2 = {
-        'firstname': firstNameArray[randomFirstName],
-        'lastname': lastNameArray[randomLastName],
-        'age': randomAge,
-        'city': cityArray[randomCity]
-    }
+        var data = {
+            'firstname': firstNameArray[randomFirstName],
+            'lastname': lastNameArray[randomLastName],
+            'age': randomAge,
+            'city': cityArray[randomCity]
+        }
 
-    o[key].push(data);
-    o[key].push(data2);
+        o[key].push(data);
+    }
 
     let json = JSON.stringify(o);
     response.end(json);
