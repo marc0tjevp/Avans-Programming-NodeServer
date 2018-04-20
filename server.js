@@ -60,14 +60,31 @@ http.createServer(function (request, response) {
     var randomAge = Math.floor(Math.random() * 80 + 1);
     var randomCity = Math.floor(Math.random() * cityArray.length);
 
-    let json = JSON.stringify({
+
+    var o = {};
+    var key = 'persons';
+    o[key] = [];
+
+    var data = {
         'firstname': firstNameArray[randomFirstName],
         'lastname': lastNameArray[randomLastName],
         'age': randomAge,
         'city': cityArray[randomCity]
-    });
+    }
 
+    var data2 = {
+        'firstname': firstNameArray[randomFirstName],
+        'lastname': lastNameArray[randomLastName],
+        'age': randomAge,
+        'city': cityArray[randomCity]
+    }
+
+    o[key].push(data);
+    o[key].push(data2);
+
+    let json = JSON.stringify(o);
     response.end(json);
+
 }).listen(process.env.PORT || 3000);
 
 console.log('Server started listening on port 3000');
